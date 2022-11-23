@@ -175,21 +175,3 @@ def work_list(studen_info):
         work.submitStatus = i["submitStatus"]
         works.append(work)
     return works
-
-
-if __name__ == "__main__":
-    # 登录函数 获取 sid cookie
-    studen_info = login('202253210250', '290073')
-    print('登录成功...')
-
-    # 写了读取课程 但没什么用 备注掉了
-    # courselist = classlist(studen_info)
-    # print(f'找到{len(courselist)}门课程...')
-
-    works = work_list(studen_info)
-    for i in works:
-        if i.submitStatus:
-            i.print_obj()
-    for i in works:
-        if not i.submitStatus:
-            i.print_obj()
